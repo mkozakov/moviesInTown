@@ -20,4 +20,9 @@ public class MovieController {
     public Movie findMovie(@RequestParam String query) throws ParseException {
         return movieService.findMovie(query).orElseThrow(() -> new ResourceNotFoundException());
     }
+
+    @RequestMapping("/health")
+    public String checkHealth() {
+        return "All okay!";
+    }
 }
